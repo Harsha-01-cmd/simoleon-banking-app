@@ -1,0 +1,15 @@
+1. create-next-app@latest --typescript --eslint --tailwind
+2. add shadcn 
+3. downloaded the assets folder
+      lib => utils ke andar custom js functions like date and time wagera added the
+      app => global.css mai tailwind css ko add kiya
+      constants => index.ts mai humne paths ke arrays and kuch objs ki styling define ki hai
+      types => index.d.ts isme hamne schemas add kiye hai
+      public mai hamne saare icons svg format mai add kiye hai
+      tailwind.config.js mai humne bade bade classes ke liye shortforms define kiye hai
+4. we edited layout.tsx and added ibmplexserif font and changed the name desc and added icons
+5. we returned both fonts inter and ibmplexserif as variables to use it in the appplication
+6. now we will design homepage
+7. (routegroups) are used taki route url mai na jaye : used taaki components organisd rahe
+8. we made (root)=>layout(humne reactNode connect kiya and sidebar and children return karenge)
+9. we made (auth)=>layout, sign-in, sign-up pages 
