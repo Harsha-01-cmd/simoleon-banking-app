@@ -13,3 +13,22 @@
 7. (routegroups) are used taki route url mai na jaye : used taaki components organisd rahe
 8. we made (root)=>layout(humne reactNode connect kiya and sidebar and children return karenge)
 9. we made (auth)=>layout, sign-in, sign-up pages 
+10.now in page.tex of root we added classes like home and home-content since we defined those in global.css
+11.we added props from index.t.tsx to header box directly and gave value to the props from our homepage(page.jsx)
+12.in header box if the type of header we want is greeting the render the user props
+13.we then did the same for totalBalanceBox.tsx by adding props from index.t.tsx and rendering in homepage
+14.we installed npm install query-string to display the TotalBalanceAmount in usd hence we used utils-function-formatAmount to make it in ruppesss
+15.we will also use react-countup package for better effect of slowly increasing the amount
+16.by default in nextjs we use server side rendering but while using react packages like countup client side interactions are involved hence we need to use use client on top of that component to undo the useRef hook error cause by the countup package
+17.instead of making whole TotalBalanceBox client side we can create another component for client side functionality of countup
+18.now we will use char.js so install npm i react-chartjs-2 chart.js and then add commands in DoghnutChat.tsx
+19.then we defined the data for charts and passed it to doughnut chart and customized it to make chart colorul
+20.for hooks or routing we use client side components
+21.we created a sidebar components and added logo simoleon and links from index.d.ts from sidebarLinks and then to enable the current page we are on, we used the usepathname hook to check and made isactive to check for the current link that we are on
+22.we added the css from globals.css to the sidebar items note: max-xl:hidden means in screen smaller than xl that element wont show
+23.now we also have to create a navbar thing for smaller screens 
+24.we added the same content from main sidebar to mobilenavbar but some changes are made to make it look correct
+25.now its time for right sidebar(right sidebar wont be included in layout since it only appears on main homepage) hence dont add it in layout rather add in in the root page itself
+26.now we created the bankCards componnts whole by scratch 
+27.now its time to create the remaining three routing of my-banks, payment-transactions and transfer-funds
+28.
