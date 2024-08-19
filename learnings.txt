@@ -31,4 +31,41 @@
 25.now its time for right sidebar(right sidebar wont be included in layout since it only appears on main homepage) hence dont add it in layout rather add in in the root page itself
 26.now we created the bankCards componnts whole by scratch 
 27.now its time to create the remaining three routing of my-banks, payment-transactions and transfer-funds
-28.
+28.now create a sign-in page but with component authform so that we can reuse it in sign-up page
+29.use sdhacn to built form authform will be client side whereas others like sign-in and sign-up will be server side
+30.import and install the dependencies of the form schema and then add the shadn form which is bascically a wrapper of normal react form. This shadcn form is self validating so we know that are inputting the correct feilds only
+31.now instead of repeating the form again and again we will make a custom input component and pass contol, name, label etc as props 
+32.since iske liye humne index.t.ts mai props define nhi kiya tha so we will make the CustomInput interface and yaha par kaafi major steps honge since hum form shadcn se laa rhe hai toh formSchema defination wagera ke liye use utils mai add karna padega
+33.utils ke andarr we have added this 
+      export const authFormSchema = z.object({
+      email: z.string().email(),
+      password: z.string().min(8)
+      })
+34.and now in authform.tsx we imported authFormSchema from lib=>utils
+35.now we used custom inputs in authForm to create input feilds
+36.then with ueState we created a snippet of loading where when the form submission is taking place a loader default from shadcn is calles and till the time form is being submitted loader is displayed
+37.then we created a footer to navigate between sign in and sign up pages
+38.due to shadcn form we need to add a (type) prop so that sign-in works since we have many input feilds 
+      export const authFormSchema = (type: string) => z.object({
+      email:z.string().email(),
+      password:z.string().min(8),
+      firstName:type==="sign-in" ? z.string().optional() : z.string().min(3),
+      lastName:type==="sign-in" ? z.string().optional() : z.string().min(3),
+      address:type==="sign-in" ? z.string().optional() : z.string().max(50),
+      state:type==="sign-in" ? z.string().optional() : z.string().min(2).max(2),
+      postalCode:type==="sign-in" ? z.string().optional() : z.string().min(6).max(6),
+      dob:type==="sign-in" ? z.string().optional() : z.string().min(3),
+      ssn:type==="sign-in" ? z.string().optional() : z.string().min(3),
+      })
+39.this way our sign-in page would work
+40.now we call formSchema=authFormSchema(type); in authFom.tsx and rename the authFormSchema with formSchema
+41.this same thing needs to be done in custon input too const formSchema = authFormSchema("sign-up"); here we passed type as sign-up since we want all feilds to be present as in case of sign-up
+42.now we use a try catch finally block to submit the form details
+43.now we create a user.actions.ts to use server component to submitthe form data on the server
+44.this we also use for mutations, data fetching and database connection
+45.now we will set up the appwrite by creating a database then 3 collections of banks users and transactions 
+46.now create a .env to store all the keys
+47.now we will create attribute for the user collection
+48.dwolla allows us to partner with bank accounts and conect for sending and recieving payments
+49.use server => all actions are server actions
+50.then from the signin and signup functions that we have created in lib we use these functions in authForm 
